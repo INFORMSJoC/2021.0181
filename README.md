@@ -24,14 +24,15 @@ To cite this software, please cite the [paper](https://doi.org/10.1287/ijoc.2019
 
 Below is the BibTex for citing this version of the code.
 
-@article{ruan2022adjustable,
-  author =      {Ruan, Haolin and Chen, Zhi and Ho, Chin Pang},
-  publisher =   {INFORMS Journal on Computing},
-  title =       {Adjustable Distributionally Robust Optimization with Infinitely Constrained Ambiguity Sets},
-  year =        {2022},
-  doi =         {XX.XX/zenodo.XXXXXXX},
-  url =         {https://github.com/INFORMSJoC/2022.XXXX},
+@article{CacheTest,
+  author =        {T. Ralphs},
+  publisher =     {INFORMS Journal on Computing},
+  title =         {{CacheTest} Version v1.0},
+  year =          {2020},
+  doi =           {10.5281/zenodo.3977566},
+  url =           {https://github.com/INFORMSJoC/JoCTemplate},
 }  
+
 
 ## Description
 
