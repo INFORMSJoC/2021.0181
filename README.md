@@ -1,105 +1,75 @@
+# ADRO
+
 [![INFORMS Journal on Computing Logo](https://INFORMSJoC.github.io/logos/INFORMS_Journal_on_Computing_Header.jpg)](https://pubsonline.informs.org/journal/ijoc)
 
-# CacheTest
+This archive is distributed in association with the [INFORMS Journal on Computing](https://pubsonline.informs.org/journal/ijoc) under the under the [CC BY License](LICENSE).
 
-This archive is distributed in association with the [INFORMS Journal on
-Computing](https://pubsonline.informs.org/journal/ijoc) under the [MIT License](LICENSE).
-
-The software and data in this repository are a snapshot of the software and data
-that were used in the research reported on in the paper 
-[This is a Template](https://doi.org/10.1287/ijoc.2019.0934) by T. Ralphs. 
-The snapshot is based on 
-[this SHA](https://github.com/tkralphs/JoCTemplate/commit/f7f30c63adbcb0811e5a133e1def696b74f3ba15) 
-in the development repository. 
-
-**Important: This code is being developed on an on-going basis at 
-https://github.com/tkralphs/JoCTemplate. Please go there if you would like to
-get a more recent version or would like support**
+This repository contains supporting material for the paper [Adjustable Distributionally Robust Optimization with Infinitely Constrained Ambiguity Sets](https://doi.org/????) by H. Ruan, Z. Chen and C. P. Ho.
 
 ## Cite
 
-To cite this software, please cite the [paper](https://doi.org/10.1287/ijoc.2019.0934) using its DOI and the software itself, using the following DOI.
+To cite this data, please cite the [research article](https://doi.org/) and the data itself, using the following DOI.
 
-[![DOI](https://zenodo.org/badge/285853815.svg)](https://zenodo.org/badge/latestdoi/285853815)
+[![DOI](https://zenodo.org/badge/DOI/XX.XXXX/zenodo.XXXXXXX.svg)](https://doi.org/XX.XXXX/zenodo.XXXXXXX)
 
-Below is the BibTex for citing this version of the code.
+Below is the BibTex for citing the data.
 
 ```
-@article{CacheTest,
-  author =        {T. Ralphs},
-  publisher =     {INFORMS Journal on Computing},
-  title =         {{CacheTest} Version v1.0},
-  year =          {2020},
-  doi =           {10.5281/zenodo.3977566},
-  url =           {https://github.com/INFORMSJoC/JoCTemplate},
+@article{ruan2022adjustable,
+  author =      {Ruan, Haolin and Chen, Zhi and Ho, Chin Pang},
+  publisher =   {INFORMS Journal on Computing},
+  title =       {Adjustable Distributionally Robust Optimization with Infinitely Constrained Ambiguity Sets},
+  year =        {2022},
+  doi =         {XX.XX/zenodo.XXXXXXX},
+  url =         {https://github.com/INFORMSJoC/2021.0181},
 }  
 ```
 
+## Content
 
-## Description
+This repository includes
 
-The goal of this software is to demonstrate the effect of cache optimization.
+1. Instance data for the Multi-Item Newsvendor Problem and the Hospital Quota Allocation Problem.
+1. Files containing sample results for the Multi-Item Newsvendor Problem, the Hospital Quota Allocation Problem and the Multi-Stage Inventory Control Problem.
+<!--1. Files describing the data formats and results.-->
 
-## Building
+### Data files
 
-In Linux, to build the version that multiplies all elements of a vector by a
-constant (used to obtain the results in [Figure 1](results/mult-test.png) in the
-paper), stepping K elements at a time, execute the following commands.
+Instance data files are located in the folder [data](data), where the random instances generated for the Multi-Item Newsvendor Problem and the Hospital Quota Allocation Problem are stored. 
 
-```
-make mult
-```
+<!--### Data formats
+The folder [formats](formats) contains a [formats.md](formats/formats.md) file that describes the formats of the instance data files of the Multi-Item Newsvendor Problem and the Hospital Quota Allocation Problem.-->
 
-Alternatively, to build the version that sums the elements of a vector (used
-to obtain the results [Figure 2](results/sum-test.png) in the paper), stepping K
-elements at a time, do the following.
 
-```
-make clean
-make sum
-```
+### Results
+The folder [results](results) contains the results of the experiments, as well as a [README.md](results/README.md) file that describes the results.
 
-Be sure to make clean before building a different version of the code.
 
-## Results
+## Data Formats
 
-Figure 1 in the paper shows the results of the multiplication test with different
-values of K using `gcc` 7.5 on an Ubuntu Linux box.
+### Multi-Item Newsvendor Problem
 
-![Figure 1](results/mult-test.png)
+To generate a random instance in the Multi-Item Newsvendor Problem, it is sufficient to generate the four random variables as follows (where the notations are consistent with those in the paper):
 
-Figure 2 in the paper shows the results of the sum test with different
-values of K using `gcc` 7.5 on an Ubuntu Linux box.
+1. $\boldsymbol{v}\in\mathbb{R}^{I}$: the unit selling prices of the  items.
+1. $\boldsymbol{\mu}\in\mathbb{R}^{I}$: the mean demand.
+1. $\boldsymbol{\sigma}\in\mathbb{R}^{I}$: the standard deviation of the demand.
+1. $\boldsymbol{\Sigma}\in\mathbb{R}^{I\times I}$: the covariance matrix of the demand.
 
-![Figure 1](results/sum-test.png)
+The instances for different settings are organized in different locations, and the settings are indicated by the folder names along the path; for example, the folder with the path **ADRO/data/newsvendor/table1/11_items/delta025** contains the $100$ instances for the results in Table $1$ in the case of $I=11, \Delta=0.25$, and the one **ADRO/data/newsvendor/table2/07_items** contains the $100$ instances for the results in Table $2$ in the case of $I=7$.
 
-## Replicating
 
-To replicate the results in [Figure 1](results/mult-test), do either
+### Hospital Quota Allocation Problem
 
-```
-make mult-test
-```
-or
-```
-python test.py mult
-```
-To replicate the results in [Figure 2](results/sum-test), do either
+A random instance in the Hospital Quota Allocation Problem consists of the following data:
 
-```
-make sum-test
-```
-or
-```
-python test.py sum
-```
+1. The number of EAIs
+who start hospitalization on day $k$ and staying for at least $l$ days, for all $k\in\mathcal{T}^-$ and $l\in[L]$.
+1. The
+number of EMIs who stay for at least $l\in[L]$ days starting from day $k\in\mathcal{T}^-$, for all $k\in\mathcal{T}^-$ and $l\in[L]$.
 
-## Ongoing Development
+The folders **ADRO/data/hospital/EAIs** and **ADRO/data/hospital/EMIs** store the 50 instances of numbers of EAIs and EMIs, respectively. An instance is stored in the format of a $13\times 16$ table, where the first column is the index of day when the patients start hospitalization and the second column is the day of week (e.g., $3$ for Wednesday, $7$ for Sunday) of this day. The number at the $t$-th column $(t = 3,4,\cdots,16)$ indicates the number of patients that will stay at least $17-t$ days. For example, in the file **ADRO/data/hospital/EAIs/instance03.csv**, the number at the $2$-nd row, $4$-th column means that in our $3$-rd random instance, the number of EAIs that starts hospitalization on day $-12$ and will stay at least $13$ days is $23.29$; while in the file **ADRO/data/hospital/EMIs/instance21.csv**, the number at the $5$-th row, $11$-th column means that in our $21$-st random instance, the number of EMIs that starts hospitalization on day $-9$ and will stay at least $6$ days is $22.93$.
 
-This code is being developed on an on-going basis at the author's
-[Github site](https://github.com/tkralphs/JoCTemplate).
 
-## Support
 
-For support in using this software, submit an
-[issue](https://github.com/tkralphs/JoCTemplate/issues/new).
+
