@@ -10,7 +10,9 @@ This repository contains supporting material for the paper [Adjustable Distribut
 
 To cite this data, please cite the [research article](https://doi.org/) and the data itself, using the following DOI.
 
-[![DOI](https://zenodo.org/badge/DOI/XX.XXXX/zenodo.XXXXXXX.svg)](https://doi.org/XX.XXXX/zenodo.XXXXXXX)
+[![DOI](https://zenodo.org/badge/568523892.svg)](https://zenodo.org/badge/latestdoi/568523892)
+
+
 
 Below is the BibTex for citing the data.
 
@@ -20,7 +22,7 @@ Below is the BibTex for citing the data.
   publisher =   {INFORMS Journal on Computing},
   title =       {Adjustable Distributionally Robust Optimization with Infinitely Constrained Ambiguity Sets},
   year =        {2022},
-  doi =         {XX.XX/zenodo.XXXXXXX},
+  doi =         {10.5281/zenodo.7626696},
   url =         {https://github.com/INFORMSJoC/2021.0181},
 }  
 ```
