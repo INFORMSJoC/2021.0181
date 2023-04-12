@@ -4,7 +4,7 @@
 
 This archive is distributed in association with the [INFORMS Journal on Computing](https://pubsonline.informs.org/journal/ijoc) under the under the [CC BY License](LICENSE).
 
-This repository contains supporting material for the paper [Adjustable Distributionally Robust Optimization with Infinitely Constrained Ambiguity Sets](https://doi.org/????) by H. Ruan, Z. Chen and C. P. Ho.
+This repository contains supporting material for the paper [Adjustable Distributionally Robust Optimization with Infinitely Constrained Ambiguity Sets](https://doi.org/10.1287/ijoc.2021.0181) by H. Ruan, Z. Chen and C. P. Ho.
 
 ## Cite
 
